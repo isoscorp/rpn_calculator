@@ -1,0 +1,6 @@
+CREATE SCHEMA IF NOT EXISTS rpn;
+
+CREATE TABLE IF NOT EXISTS rpn.stacks(
+    id      SERIAL PRIMARY KEY,
+    items   INTEGER array
+);

@@ -13,6 +13,7 @@
 
 ## Securité
 * gestion de l'authentification (à définir avec le projet)
+* implémenter un rate-limiter pour se protéger des appels excessifs
   
 ## Devops
 * créer une pipeline d'intégration continue :

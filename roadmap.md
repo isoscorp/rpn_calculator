@@ -9,6 +9,7 @@
 * suppression des stacks non utilisées
   * proposition : job quotidien (exemple : dag Airflow) pour supprimer les stacks en fonction 
     de la date de dernière opération ou de la durée de vie
+* permettre de poster plusieurs opérations en 1 seule requête en assurant l'atomicité
 
 ## Securité
 * gestion de l'authentification (à définir avec le projet)

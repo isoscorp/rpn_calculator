@@ -12,10 +12,8 @@ Install dependencies with
 pip install -r ./setup/requirements.txt
 ```
 ### Setup database
-Install postgres and run the following script
+Install postgres, create your database and run the following script
 ```psql
-CREATE DATABASE db;
-
 CREATE SCHEMA IF NOT EXISTS rpn;
 
 CREATE TABLE IF NOT EXISTS rpn.stacks(

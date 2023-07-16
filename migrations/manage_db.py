@@ -8,6 +8,10 @@ ROOT_DIR = os.path.dirname(__file__)
 
 
 class DBManager:
+    """
+    Helper class to execute a script in a database.
+    NOTE: does not handle automatically upgrading/downgrading.
+    """
     def __init__(self, host: str, port: int, db_name: str, password: str):
         self.host = host
         self.port = port
@@ -15,6 +19,7 @@ class DBManager:
         self.db_name = db_name
 
     def reset_db(self):
+        """ Drops and re-creates the instance database """
         conn = psycopg2.connect(
             host=self.host, port=self.port, dbname="postgres", user="postgres", password=self.password
         )
@@ -32,6 +37,7 @@ class DBManager:
         cur.execute(f"CREATE DATABASE {self.db_name}")
 
     def run_sql_file(self, file_path: str):
+        """ Connects to the instance database and executes the requested script file """
         conn = psycopg2.connect(
             host=self.host, port=self.port, dbname=self.db_name, user="postgres", password=self.password
         )
@@ -50,7 +56,7 @@ class DBManager:
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Connects to database and executes a sql script file.")
+    parser = argparse.ArgumentParser(description="Creates a database and executes creation of rpn schema and tables.")
     parser.add_argument("--host", type=str, default="localhost", help="Database host to connect to")
     parser.add_argument("--port", type=int, default=5432, help="Database port to connect to")
     parser.add_argument("--dbname", type=str, default="test_rpn", help="Database name")

@@ -7,6 +7,7 @@
 * gérer les opérations sur les nombres à virgule + précision des décimales
 * gérer les erreurs (opérations interdites, opérandes insuffisants dans la stack)
 * gérer les accès concurrents aux stacks : utiliser un lock à chaque opération sur une stack
+* documenter les erreurs dans les endpoints
 
 ## Testing
 * tester unitairement les opérations, en particulier la non commutativité pour la soustraction / division

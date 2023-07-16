@@ -6,6 +6,7 @@ from model.base import Base
 
 
 class Stack(Base):
+    """ Core class storing the items for the RPN calculator (in a mutable list) """
     __tablename__ = "stacks"
     __table_args__ = {"schema": "rpn"}
 

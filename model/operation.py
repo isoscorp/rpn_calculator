@@ -10,4 +10,5 @@ class OperationCode(Enum):
 
     @classmethod
     def values(cls) -> List[str]:
+        """ Returns the possible values as a list of strings. """
         return [e.value for e in cls]
